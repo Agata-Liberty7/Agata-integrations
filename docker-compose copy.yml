@@ -1,0 +1,43 @@
+version: '3.7' 
+services:
+    pgdb:
+      container_name: pgdb
+      restart: always
+      image: postgres:14
+      environment:
+        POSTGRES_PASSWORD: admin
+        POSTGRES_DB: agata
+        PGDATA: /var/lib/postgresql/data/ex65/
+      ports:
+      # psql postgresql://postgres:1234@localhost:5436/postgres
+      - 5432:5432
+#       networks:
+#       - agata
+#       volumes:
+#           - /Users/admin/Downloads/rso31_ns/rso31_ns:/rso
+#           # - ../:/var/www
+#     server:
+#       hostname: server.server_default
+#       container_name: server
+#       restart: always
+#       deploy:
+#         resources:
+#             limits:
+#               cpus: "0.25"
+#               memory: 128M
+#       build:
+#         dockerfile: Dockerfile
+#         context: .
+#       environment:
+#         DB_CS: host=pgdb port=5432 dbname=agata sslmode=disable
+#        # MANDATORY_ACCESS: "true"
+#       networks:
+#       - agata
+#       ports:
+#       - 9999:8080
+#       depends_on: 
+#       - pgdb
+      
+# networks:
+#   agata:
+#     external: true

@@ -1,0 +1,12 @@
+version: '3.7' 
+services:
+    pgdb:
+      container_name: pgdb
+      restart: always
+      image: postgres
+      environment:
+        POSTGRES_PASSWORD: admin
+        POSTGRES_DB: agata
+        PGDATA: /var/lib/postgresql/data/ex65/
+      ports:
+      - 5432:5432
